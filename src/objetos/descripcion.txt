@@ -1,0 +1,29 @@
+Objetivo Principal: Simular una aplicación que cree catálogos de coches.   
+
+Detalles Clave de la Simulación:
+
+Tipos de Coche: La aplicación debe manejar diferentes tipos de coche, que son:
+
+Eléctricos    
+Híbridos    
+Gasolina    
+Diésel    
+Fabricantes: Se deben incluir coches de varios fabricantes:
+
+Mercedes    
+Audi    
+Lexus    
+Seat    
+Atributos y Características Específicas:
+
+Cada fabricante tendrá sus propios atributos. Por ejemplo, los fabricantes no de la Unión Europea tendrán aranceles, los de la Unión Europea tendrán subvenciones, y los japoneses y coreanos tendrán precios en sus monedas.   
+Cada tipo de coche tendrá características propias. Por ejemplo:
+Los de combustión (Gasolina y Diésel) tendrán Cilindrada.   
+Los eléctricos tendrán autonomía y tiempo de recarga.   
+Los híbridos tendrán autonomía eléctrica.   
+Funcionalidad del Catálogo:
+
+El catálogo debe crearse seleccionando coches según el tipo que decida el comprador.   
+Además de por tipo (por ejemplo, eléctricos), el catálogo permitirá seleccionar coches por otras características (por ejemplo, una autonomía de más de 400 km).   
+ 
+En esencia, la práctica consiste en modelar una estructura de clases que represente esta variedad de coches y fabricantes, aplicando el patrón de diseño Abstract Factory para crear las familias de objetos relacionadas (coches de diferentes tipos y fabricantes) y construir catálogos filtrados según ciertos criterios.
