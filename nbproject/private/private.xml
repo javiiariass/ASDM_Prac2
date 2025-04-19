@@ -3,21 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/fabricas/I_FabricaVehiculo.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAudi_Electrico.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Lexus.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoMercedes_Combustion.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/fabricas/FabricaCombustion.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Mercedes.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Seat.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/test/TestCombustion.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Audi.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/test/mainPrueba.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoLexus_Combustion.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/descripcion.txt</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAudi_Combustion.java</file>
-            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoSeat_Combustion.java</file>
+            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/test/TestCatalogo.java</file>
+            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Hibrido.java</file>
             <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto.java</file>
+            <file>file:/C:/Users/javie/Documents/GitHub/UNI/ASDM_Prac2/src/objetos/AutoAbstracto_Electrico.java</file>
         </group>
     </open-files>
 </project-private>
