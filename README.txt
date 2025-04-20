@@ -1,0 +1,1 @@
+No se por qué en el modo gráfico la lista no se muestra completa. En la terminal sale la lista completa

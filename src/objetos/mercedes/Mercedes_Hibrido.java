@@ -43,7 +43,7 @@ public class Mercedes_Hibrido extends AutoAbstracto_Hibrido implements I_AutoEur
 
     @Override
     public void mostrarCaracteristicas() {
-        System.out.println(fabricante + " " + modelo + " " + anyoFabricacion + " (hibrido)\n-------------------");
+        System.out.println('\n' + fabricante + " " + modelo + " " + anyoFabricacion + " (hibrido)\n-------------------");
         System.out.println("Color: " + color);
         System.out.println("Potencia: " + potencia + "cv");
         System.out.println("Cilindrada: " + cilindrada);
@@ -52,6 +52,19 @@ public class Mercedes_Hibrido extends AutoAbstracto_Hibrido implements I_AutoEur
         System.out.println("Precio base: " + precio);
         System.out.println("Precio con subvencion: " + calcularPrecioFinal());
         System.out.println("Autonomia motor eléctrico: " + autonomiaElectrica);
+    }
+
+    @Override
+    public String obtenerCaracteristicasString() {
+        return "\n" + fabricante + " " + modelo + " " + anyoFabricacion + " (hibrido)\n-------------------\n" +
+               "Color: " + color + "\n" +
+               "Potencia: " + potencia + "cv\n" +
+               "Cilindrada: " + cilindrada + "\n" +
+               "Plazas: " + nPlazas + "\n" +
+               "Capacidad de maletero: " + espacioMaletero + "L\n" +
+               "Precio base: " + precio + "\n" +
+               "Precio con subvencion: " + calcularPrecioFinal() + "\n" +
+               "Autonomia motor eléctrico: " + autonomiaElectrica;
     }
 
     @Override

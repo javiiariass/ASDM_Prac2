@@ -134,7 +134,7 @@ public class TestCatalogo {
             catalogoDiesel.add(fabricas.get(0).crearCocheDiesel("Clase E", "Negro", 194, 610.0f, 5, 2024, 55000, 2000, 600));
             catalogoDiesel.add(fabricas.get(1).crearCocheDiesel("A4", "Plata", 160, 430.0f, 5, 2023, 38000, 2000, 500));
             catalogoDiesel.add(fabricas.get(1).crearCocheDiesel("A6", "Azul", 204, 520.0f, 5, 2024, 58000, 2000, 550));
-            catalogoDiesel.add(fabricas.get(2).crearCocheDiesel("NX", "Negro", 190, 480.0f, 5, 2023, 8000000, 2200, 520)); // Corregido maletero a int
+            catalogoDiesel.add(fabricas.get(2).crearCocheDiesel("NX", "Negro", 190, 480.0f, 5, 2023, 8000000, 2200, 520)); 
             catalogoDiesel.add(fabricas.get(2).crearCocheDiesel("RX", "Blanco", 238, 461.0f, 5, 2024, 11000000, 2400, 500));
             catalogoDiesel.add(fabricas.get(3).crearCocheDiesel("Leon", "Blanco", 150, 400.0f, 5, 2023, 22000, 1900, 350));
             catalogoDiesel.add(fabricas.get(3).crearCocheDiesel("Ateca", "Gris", 150, 510.0f, 5, 2024, 28000, 2000, 500));

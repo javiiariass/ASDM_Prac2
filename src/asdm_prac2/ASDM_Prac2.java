@@ -16,7 +16,7 @@ public class ASDM_Prac2 {
      */
     public static void main(String[] args) {
         
-        Thread hilo = new Thread((Runnable) new Frame());
+        Frame fr = new Frame();
     }
     
 }

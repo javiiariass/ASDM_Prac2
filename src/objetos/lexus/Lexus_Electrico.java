@@ -43,7 +43,7 @@ public class Lexus_Electrico extends AutoAbstracto_Electrico implements I_AutoNo
 
     @Override
     public void mostrarCaracteristicas() {
-        System.out.println(fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------");
+        System.out.println('\n' + fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------");
         System.out.println("Color: " + color);
         System.out.println("Potencia: " + potencia + "cv");
         System.out.println("Plazas: " + nPlazas);
@@ -52,6 +52,19 @@ public class Lexus_Electrico extends AutoAbstracto_Electrico implements I_AutoNo
         System.out.println("Precio con aranceles: " + calcularPrecioFinal());
         System.out.println("Autonomia: " + autonomia);
         System.out.println("Tiempo de carga: " + tiempoRecarga);
+    }
+
+    @Override
+    public String obtenerCaracteristicasString() {
+        return "\n" + fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------\n" +
+               "Color: " + color + "\n" +
+               "Potencia: " + potencia + "cv\n" +
+               "Plazas: " + nPlazas + "\n" +
+               "Capacidad de maletero: " + espacioMaletero + "L\n" +
+               "Precio base: " + precio + moneda + "\t" + getPrecioEnEuros() + "€\n" +
+               "Precio con aranceles: " + calcularPrecioFinal() + "\n" +
+               "Autonomia: " + autonomia + "\n" +
+               "Tiempo de carga: " + tiempoRecarga;
     }
 
     @Override

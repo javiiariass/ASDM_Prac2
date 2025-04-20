@@ -84,6 +84,12 @@ public abstract class AutoAbstracto {
     public abstract void mostrarCaracteristicas();
     
     /**
+     * Devuelve una cadena con los datos del vehiculo
+     * @return String con las características del vehículo
+     */
+    public abstract String obtenerCaracteristicasString();
+    
+    /**
      * calcular precio dependiendo de aranceles/subvenciones
      * @return precio final del producto
      */

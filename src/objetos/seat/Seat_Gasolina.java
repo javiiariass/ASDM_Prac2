@@ -34,7 +34,7 @@ public class Seat_Gasolina extends AutoAbstracto_Gasolina implements I_AutoEurop
 
     @Override
     public void mostrarCaracteristicas() {
-        System.out.println(fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------");
+        System.out.println('\n' + fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------");
         System.out.println("Color: " + color);
         System.out.println("Potencia: " + potencia + "cv");
         System.out.println("Cilindrada: " + cilindrada);
@@ -42,6 +42,18 @@ public class Seat_Gasolina extends AutoAbstracto_Gasolina implements I_AutoEurop
         System.out.println("Capacidad de maletero: " + espacioMaletero + 'L');
         System.out.println("Precio base: " + precio);
         System.out.println("Precio con subvencion: " + calcularPrecioFinal());
+    }
+
+    @Override
+    public String obtenerCaracteristicasString() {
+        return "\n" + fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------\n" +
+               "Color: " + color + "\n" +
+               "Potencia: " + potencia + "cv\n" +
+               "Cilindrada: " + cilindrada + "\n" +
+               "Plazas: " + nPlazas + "\n" +
+               "Capacidad de maletero: " + espacioMaletero + "L\n" +
+               "Precio base: " + precio + "\n" +
+               "Precio con subvencion: " + calcularPrecioFinal();
     }
 
     @Override

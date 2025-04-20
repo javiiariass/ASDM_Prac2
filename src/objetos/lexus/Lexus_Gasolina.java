@@ -47,7 +47,7 @@ public class Lexus_Gasolina extends AutoAbstracto_Gasolina implements I_AutoNoEu
 
     @Override
     public void mostrarCaracteristicas() {
-        System.out.println(fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------");
+        System.out.println('\n' + fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------");
         System.out.println("Color: " + color);
         System.out.println("Potencia: " + potencia + "cv");
         System.out.println("Cilindrada: " + cilindrada);
@@ -55,6 +55,18 @@ public class Lexus_Gasolina extends AutoAbstracto_Gasolina implements I_AutoNoEu
         System.out.println("Capacidad de maletero: " + espacioMaletero + 'L');
         System.out.println("Precio base: " + precio + "¥\t" + getPrecioEnEuros() + '€');
         System.out.println("Precio con subvencion: " + calcularPrecioFinal());
+    }
+
+    @Override
+    public String obtenerCaracteristicasString() {
+        return "\n" + fabricante + " " + modelo + " " + anyoFabricacion + " (gasolina)\n-------------------\n" +
+               "Color: " + color + "\n" +
+               "Potencia: " + potencia + "cv\n" +
+               "Cilindrada: " + cilindrada + "\n" +
+               "Plazas: " + nPlazas + "\n" +
+               "Capacidad de maletero: " + espacioMaletero + "L\n" +
+               "Precio base: " + precio + moneda + "\t" + getPrecioEnEuros() + "€\n" +
+               "Precio con aranceles: " + calcularPrecioFinal(); // Note: Label says "subvencion" but calculates with aranceles
     }
 
     @Override

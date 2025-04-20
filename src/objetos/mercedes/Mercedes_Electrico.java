@@ -41,7 +41,7 @@ public class Mercedes_Electrico extends AutoAbstracto_Electrico implements I_Aut
 
     @Override
     public void mostrarCaracteristicas() {
-        System.out.println(fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------");
+        System.out.println('\n' + fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------");
         System.out.println("Color: " + color);
         System.out.println("Potencia: " + potencia + "cv");
         System.out.println("Plazas: " + nPlazas);
@@ -50,6 +50,19 @@ public class Mercedes_Electrico extends AutoAbstracto_Electrico implements I_Aut
         System.out.println("Precio con subvencion: " + calcularPrecioFinal());
         System.out.println("Autonomia: " + autonomia);
         System.out.println("Tiempo de carga: " + tiempoRecarga);
+    }
+
+    @Override
+    public String obtenerCaracteristicasString() {
+        return "\n" + fabricante + " " + modelo + " " + anyoFabricacion + " (electrico)\n-------------------\n" +
+               "Color: " + color + "\n" +
+               "Potencia: " + potencia + "cv\n" +
+               "Plazas: " + nPlazas + "\n" +
+               "Capacidad de maletero: " + espacioMaletero + "L\n" +
+               "Precio base: " + precio + "\n" +
+               "Precio con subvencion: " + calcularPrecioFinal() + "\n" +
+               "Autonomia: " + autonomia + "\n" +
+               "Tiempo de carga: " + tiempoRecarga;
     }
 
     @Override

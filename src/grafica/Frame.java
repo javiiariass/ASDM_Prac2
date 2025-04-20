@@ -4,10 +4,26 @@
  */
 package grafica;
 
+import asdm_prac2.manejaCatalogo;
+import java.awt.MediaTracker;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.OK_CANCEL_OPTION;
+import objetos.AutoAbstracto;
+
 /**
  *
  * @author javiiariass
  */
+
 public class Frame extends javax.swing.JFrame {
 
     /**
@@ -17,14 +33,26 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         iniciaComponentes();
     }
-    
+
     /**
      * Inicializaciones que no realiza initComponents()
      */
-    public void iniciaComponentes(){
-        
-        
+    public void iniciaComponentes() {
+
         setVisible(true);
+        
+        // Carga el logo del concesionario
+        cargaLogo();
+        
+        // Texto inicial en panel izquierdo
+        
+        Panel_izdoEscribePanelIzdoLN("****************");
+        Panel_izdoEscribePanelIzdoLN("|Catálogo vacío|");
+        Panel_izdoEscribePanelIzdoLN("****************");
+        
+        // Boton filtro deshabilitado hasta que se cargue catalogo
+        botonFiltrar.setEnabled(false);
+        
     }
 
     /**
@@ -36,24 +64,249 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_izdo = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        panelTexto = new javax.swing.JTextArea();
+        label_logo = new javax.swing.JLabel();
+        panelBotones = new javax.swing.JPanel();
+        botonCargar = new javax.swing.JButton();
+        botonFiltrar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
+        setResizable(false);
+
+        panel_izdo.setPreferredSize(new java.awt.Dimension(500, 500));
+
+        panelTexto.setEditable(false);
+        panelTexto.setColumns(20);
+        panelTexto.setRows(5);
+        panelTexto.setPreferredSize(new java.awt.Dimension(500, 450));
+        jScrollPane1.setViewportView(panelTexto);
+
+        javax.swing.GroupLayout panel_izdoLayout = new javax.swing.GroupLayout(panel_izdo);
+        panel_izdo.setLayout(panel_izdoLayout);
+        panel_izdoLayout.setHorizontalGroup(
+            panel_izdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_izdoLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panel_izdoLayout.setVerticalGroup(
+            panel_izdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        label_logo.setPreferredSize(new java.awt.Dimension(500, 50));
+
+        panelBotones.setPreferredSize(new java.awt.Dimension(200, 550));
+
+        botonCargar.setText("cargar catálogo");
+        botonCargar.setAlignmentY(0.0F);
+        botonCargar.setPreferredSize(new java.awt.Dimension(100, 70));
+        botonCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCargarActionPerformed(evt);
+            }
+        });
+
+        botonFiltrar.setText("Filtrar catálogo");
+        botonFiltrar.setAlignmentY(0.0F);
+        botonFiltrar.setPreferredSize(new java.awt.Dimension(100, 70));
+        botonFiltrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonFiltrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBotonesLayout = new javax.swing.GroupLayout(panelBotones);
+        panelBotones.setLayout(panelBotonesLayout);
+        panelBotonesLayout.setHorizontalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 50, Short.MAX_VALUE))
+        );
+        panelBotonesLayout.setVerticalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(botonCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(botonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panel_izdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(label_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel_izdo, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarActionPerformed
+        // TODO add your handling code here:
+        cargarCatalogo();
+    }//GEN-LAST:event_botonCargarActionPerformed
+
+    private void botonFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFiltrarActionPerformed
+        filtraCatalogo();        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFiltrarActionPerformed
+
+    // ------------------------------------------------------------- Panel derecho -------------------------------------------------------------
+    private void cargarCatalogo() {
+        String[] opciones = {
+            "Electrico", "Diesel", "Gasolina", "Hibrido", "Catalogo completo"};
+
+        // menu elecciones
+        JComboBox<String> combo = new JComboBox<>(opciones);
+
+        int panel = JOptionPane.showConfirmDialog(this, combo, "Tipos", OK_CANCEL_OPTION);
+        String seleccion = (String) combo.getSelectedItem();
+        // Si han pulsado boton de ok
+        if (panel == JOptionPane.OK_OPTION) {
+            manejaCatalogo.borraCatalogo();
+            botonFiltrar.setEnabled(true);
+            manejaCatalogo.instanciaCatalogo(seleccion);
+            //System.out.println(manejaCatalogo.getCatalogo().size());
+            pintaCatalogo(manejaCatalogo.getCatalogo());
+        }
+        
+        
+
+    }
+    
+    private void pintaCatalogo(List<AutoAbstracto> cat){
+        Panel_izdoBorra();
+        for (AutoAbstracto auto : cat) {
+            Panel_izdoEscribePanelIzdoLN(
+                    auto.obtenerCaracteristicasString());
+            
+            auto.mostrarCaracteristicas();
+        }
+    }
+
+    private void filtraCatalogo() {
+    
+        // ampliables más opciones de filtro... Añadir opciones por cada tipo de vehiculo
+    String[] opciones = {
+        "potencia", "nPlazas", "precio"};
+    
+    // menu elecciones
+        JComboBox<String> combo = new JComboBox<>(opciones);
+
+        int panel = JOptionPane.showConfirmDialog(this, combo, "Filtros", OK_CANCEL_OPTION);
+        String seleccion = (String) combo.getSelectedItem();
+        // Si han pulsado boton de ok
+        if (panel == JOptionPane.OK_OPTION) {
+            
+            pintaCatalogo(manejaCatalogo.filtraCatalogo(seleccion));
+        }
+
+}
+    
+    // ------------------------------------------------------------- Panel superior -------------------------------------------------------------
+    private void cargaLogo() {
+    String rutaImagen = "resources/images/cardianceLogo.png";
+    try {
+        if (!new File(rutaImagen).exists()) {
+
+            throw new IOException("El archivo no existe");
+
+        }
+
+        BufferedImage imagen = ImageIO.read(new File(rutaImagen));
+        //avionImagen = Toolkit.getDefaultToolkit().getImage(getClass().getResource("../../resources/images/airUHU.png"));
+        //Para que no pinte hasta que la imagen no esté cargada
+        MediaTracker tracker = new MediaTracker(this);
+
+        tracker.addImage(imagen, 0);
+
+        //Esperamos a que estén todas cargadas
+        tracker.waitForAll();
+
+        label_logo.setIcon(new ImageIcon(imagen));
+
+    } catch (IOException | InterruptedException ex) {
+        Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
+    
+    
+    // ------------------------------------------------------------- Panel izquierdo -------------------------------------------------------------
+    /**
+     * Borra el contenido del panel y escribe nuevo contenido.
+     * @param texto 
+     */
+    private void Panel_izdoBorraYEscribe(String texto) {
+    Panel_izdoBorra();
+    Panel_izdoEscribePanelIzdo(texto);
+}
+    
+    /**
+     * Borra el contenido del panel y escribe nuevo contenido
+     * finalizando con salto de linea
+     * @param texto 
+     */
+    private void Panel_izdoBorraYEscribeLN(String texto) {
+    Panel_izdoBorra();
+    Panel_izdoEscribePanelIzdo(texto + '\n');
+}
+    
+    /**
+     * Elimina contenido del panel
+     */
+    private void Panel_izdoBorra() {
+    panelTexto.setText("");
+}
+    
+    /**
+     * Anyade texto en una nueva linea en panel. 
+     * No borra lo que hay ya escrito.
+     * NO INCLUYE SALTO DE LINEA
+     * @param texto 
+     */
+    private void Panel_izdoEscribePanelIzdo(String texto) {
+    panelTexto.append(texto);
+}
+    
+    /**
+     * Anyade texto en una nueva linea incluyendo salto de linea
+     * No borra lo que hay ya escrito
+     * @param texto 
+     */
+    private void Panel_izdoEscribePanelIzdoLN(String texto) {
+    Panel_izdoEscribePanelIzdo(texto + '\n');
+}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCargar;
+    private javax.swing.JButton botonFiltrar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel label_logo;
+    private javax.swing.JPanel panelBotones;
+    private javax.swing.JTextArea panelTexto;
+    private javax.swing.JPanel panel_izdo;
     // End of variables declaration//GEN-END:variables
 }
